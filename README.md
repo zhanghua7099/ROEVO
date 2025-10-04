@@ -19,7 +19,14 @@ The  repository provides multiple examples to demonstrate the visualization  and
 - Pangolin 0.6 (**strict version requirements**. Versions 0.5 or latest are encountering  issues.   *todo*)
 - TBB (`sudo apt install libtbb-dev`)
 
-to compile the project, do
+
+**Tips**:
+To install **Pangolin 0.6** correctly, please refer to:
+https://github.com/stevenlovegrove/Pangolin/issues/268
+
+If you encounter a similar problem, the code may need to be modified.
+
+To compile the project, do
 
 ```bash
 # in any directory: 
