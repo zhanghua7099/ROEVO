@@ -207,10 +207,10 @@ int main(int argc, char **argv) {
 
     for(int i = 0; i < N; ++i)
     {
-        cv::Mat imgRGB = cv::imread(path_tum + rgb_file_seq[i], CV_LOAD_IMAGE_COLOR);
+        cv::Mat imgRGB = cv::imread(path_tum + rgb_file_seq[i], cv::IMREAD_COLOR);
         cv::Mat imgGray;
         cv::cvtColor(imgRGB, imgGray, cv::COLOR_BGR2GRAY);
-        cv::Mat imgDepth = cv::imread(path_tum + depth_file_seq[i], CV_LOAD_IMAGE_UNCHANGED);
+        cv::Mat imgDepth = cv::imread(path_tum + depth_file_seq[i], cv::IMREAD_UNCHANGED);
         imgDepth.convertTo(imgDepth, CV_32F, scale);
         
         if(i == 0)

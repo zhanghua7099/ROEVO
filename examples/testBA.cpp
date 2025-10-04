@@ -193,8 +193,8 @@ int main(int argc, char **argv) {
             pose_last = pose_curr_coarse;
 
             //-- 生成当前帧
-            cv::Mat imgRGB = cv::imread(path_tum + rgb_file_seq[i], CV_LOAD_IMAGE_COLOR);
-            cv::Mat imgDepth = cv::imread(path_tum + depth_file_seq[i], CV_LOAD_IMAGE_UNCHANGED);
+            cv::Mat imgRGB = cv::imread(path_tum + rgb_file_seq[i], cv::IMREAD_COLOR);
+            cv::Mat imgDepth = cv::imread(path_tum + depth_file_seq[i], cv::IMREAD_UNCHANGED);
             imgDepth.convertTo(imgDepth, CV_32F, mDepthMapFactor);
             selector.processImage(imgRGB);
 
