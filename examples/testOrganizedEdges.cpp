@@ -158,7 +158,7 @@ int main(int argc, char **argv) {
 
     cv::namedWindow("O-EDGE", cv::WINDOW_NORMAL);
 
-    cv::Mat imgRGB_1 = cv::imread(path_image, CV_LOAD_IMAGE_COLOR);
+    cv::Mat imgRGB_1 = cv::imread(path_image, cv::IMREAD_COLOR);
     selector.processImage(imgRGB_1);
 
     cv::Mat imgSeg = visualizeEdges(imgRGB_1, selector.mvEdges);

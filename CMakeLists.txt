@@ -5,10 +5,12 @@ set(CMAKE_BUILD_TYPE "Release")
 add_definitions("-DENABLE_SSE")
 # set(CMAKE_CXX_FLAGS "-std=c++14 -O2 ${SSE_FLAGS} -g -march=native")
 set(CMAKE_CXX_FLAGS "-std=c++14 -O2 ${SSE_FLAGS} -g")
+set(Sophus_INCLUDE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/third-party/Sophus" CACHE PATH "Sophus Include directory")
 
-find_package(OpenCV 3.4 REQUIRED)
+find_package(OpenCV REQUIRED)
+find_package(Eigen3 REQUIRED)
 find_package(PCL REQUIRED)
-find_package(Sophus REQUIRED)
+# find_package(Sophus REQUIRED)
 find_package(FMT REQUIRED)
 # find_package(Ceres REQUIRED)
 find_package(Pangolin REQUIRED)
@@ -21,12 +23,13 @@ include_directories(
     ${OpenCV_INCLUDE_DIRS}
     ${PCL_INCLUDE_DIRS}
     ${Sophus_INCLUDE_DIRS}
+    ${EIGEN3_INCLUDE_DIR}
     # ${CERES_INCLUDE_DIRS}
     # ${GTSAM_INCLUDE_DIR}
     ${Pangolin_INCLUDE_DIRS}
     ${TBB_INCLUDE_DIRS}
 )
-include_directories("/usr/include/eigen3")
+# include_directories("/usr/include/eigen3")
 
 
 # 查找并链接 libtbb.so.2
